@@ -1,0 +1,83 @@
+<div class="leader-wrapper-bg" ng-if="showLeaderboard">
+
+  <div class="leader-wrapper">
+    <div class="leader-title">
+      <p>Leaderboard</p>
+    </div>
+    <div class="leader-cell-wrapper">
+
+      <div class="leader-cell" ng-repeat="l in leaderboard" ng-class="{dark:($index % 2 != 0), me: l._id == user._id}">
+        <div class="l-rank">
+          <h3>{{$index + 1}}</h1>
+        </div>
+        <div class="l-name">
+          <h1>{{l.name}}</h1>
+        </div>
+        <div class="l-score">
+          <h1>{{l.maxScore}}</h1>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="start-new-game-wrapper" ng-click="restart()">
+    <h1>start new game</h1>
+  </div>
+  <div class="stats-wrapper">
+
+    <h1>score: <span>{{currentScore}}</span></h1>
+
+
+
+    <div class="user-stats">
+      <h2>name: <span>{{user.name}}</span></h2>
+      <h2>max score: <span>{{user.maxScore}}</span></h2>
+      <h2>lifetime total score: <span>{{user.totalScore}}</span></h2>
+      <h2>total games played: <span>{{user.gamesPlayed}}</span></h2>
+    </div>
+
+
+
+
+
+    <h2></h2>
+
+  </div>
+
+
+
+</div>
+
+
+<div class="header-wrapper">
+  <h1>{{user.name}}</h1>
+
+  <h2>max score: <span>{{user.maxScore}}</span></h2>
+
+
+  <div class="score-wrapper" ng-class="{'green': green}">
+    <h3>score</h3>
+    <p>{{currentScore}}</p>
+
+  </div>
+
+
+</div>
+
+<div class="game-wrapper">
+
+  <div class="row" ng-repeat="row in world">
+    <div class="pixel" ng-repeat="pix in row track by $index" ng-class="{wall: pix == 1, snek: pix == 2, snekH: pix == 3, apple: pix == 4}">
+    </div>
+  </div>
+
+  <div class="refresh-rate">
+    <h1>step rate: {{speed}}ms</h1>
+  </div>
+
+
+
+
+</div>

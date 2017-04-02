@@ -1,0 +1,5 @@
+
+<div class="login-wrapper" ng-keypress="myFunct($event)">
+  <input id="pass" type="text" value="" ng-model="player.name" ng-class="{'hoveredI': hoverEdit, 'redI': red}" ng-change="inputChange()" autofocus>
+  <button ng-click="playerEnter()" ng-mouseover="hoverEdit = true" ng-mouseleave="hoverEdit = false" ng-class="{'hovered': hoverEdit, 'red': red}">{{buttonText}}</button>
+</div>

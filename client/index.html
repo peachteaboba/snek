@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>snek</title>
+    <link rel='stylesheet' href='static/css/reset.css'>
+    <link rel='stylesheet' href='static/css/index.css'>
+    <link rel='stylesheet' href='static/css/login.css'>
+    <link rel='stylesheet' href='static/css/game.css'>
+
+
+
+    <script type="text/javascript" src="angular/angular.min.js"></script>
+    <script type="text/javascript" src="angular-route/angular-route.min.js"></script>
+    <script>
+        // Create Angular App
+        var app = angular.module("myApp", ['ngRoute']);
+
+        // Configure Angular Routes
+        app.config(function($routeProvider) {
+            $routeProvider
+                .when('/',{
+                    templateUrl: 'static/partials/loginReg.html',
+                    controller:'loginController'
+                })
+                .when('/game', {
+                    templateUrl: 'static/partials/game.html',
+                    controller: 'gameController'
+                })
+                .otherwise({
+                    redirectTo: '/'
+                })
+        });
+    </script>
+    <script type="text/javascript" src="static/js/factories.js"></script>
+    <script type="text/javascript" src="static/js/controllers.js"></script>
+
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="static/img/snek.png">
+
+
+</head>
+
+<body>
+    <div ng-view=""></div>
+</body>
+</html>

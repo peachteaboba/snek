@@ -1,0 +1,14 @@
+{
+  "name": "Snek",
+  "version": "0.0.1",
+  "description": "Snek browser game",
+  "main": "server.js",
+  "author": "peachteaboba",
+  "dependencies": {
+    "bcrypt": "^1.0.2",
+    "body-parser": "latest",
+    "colors": "^1.1.2",
+    "express": "latest",
+    "mongoose": "latest"
+  }
+}
