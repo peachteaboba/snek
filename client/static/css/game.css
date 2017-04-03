@@ -290,7 +290,13 @@
 
 
 .refresh-rate{
+  margin-top: 15px;
+}
+
+.refresh-rate h2{
+  /*font-size: 0.8em;*/
   margin-top: 10px;
+  color: #BCC2C4;
 }
 
 
